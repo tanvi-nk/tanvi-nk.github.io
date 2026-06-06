@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Tanvi Kulkarni</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        /* Top Navigation Menu Bar */
+        nav {
+            margin-bottom: 40px;
+            text-align: center;
+            width: 100%;
+        }
+
+        nav a {
+            color: #b0b3b8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0 20px;
+            padding-bottom: 6px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        nav a.active {
+            color: #00d2ff;
+            border-bottom: 2px solid #00d2ff;
+            text-shadow: 0 0 8px rgba(0, 210, 255, 0.6);
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Research Paper Wrapper */
+        .paper-container {
+            max-width: 850px;
+            width: 100%;
+            padding: 40px;
+            border: 1px solid rgba(0, 210, 255, 0.15);
+            background: rgba(10, 10, 12, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+            margin-bottom: 60px;
+        }
+
+        header.paper-header {
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 30px;
+            margin-bottom: 35px;
+        }
+
+        h1.paper-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.3;
+            background: linear-gradient(135deg, #ffffff 70%, #00d2ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .author {
+            font-size: 1.1rem;
+            color: #00d2ff;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .references-meta {
+            font-size: 0.85rem;
+            color: #8a8d93;
+            margin-top: 10px;
+        }
+
+        h2.section-heading {
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #ffffff;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 3px solid #00d2ff;
+            padding-left: 15px;
+        }
+
+        h3.sub-section-heading {
+            font-size: 1.1rem;
+            color: #00d2ff;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #cdd1d8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        blockquote.definition {
+            background: rgba(0, 210, 255, 0.03);
+            border: 1px solid rgba(0, 210, 255, 0.15);
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-size: 1rem;
+        }
+        
+        blockquote.definition strong {
+            color: #00d2ff;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+            color: #cdd1d8;
+        }
+
+        li {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .chain-list {
+            list-style-type: none;
+            margin-left: 10px;
+        }
+
+        .chain-list li::before {
+            content: "→ ";
+            color: #00d2ff;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .diagram-container {
+            background: #0d0e12;
+            border: 1px dashed rgba(0, 210, 255, 0.3);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px auto;
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .diagram-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #8a8d93;
+            margin-bottom: 15px;
+        }
+
+        .diagram-box {
+            display: inline-block;
+            border: 1px solid #00d2ff;
+            padding: 10px 15px;
+            background: rgba(0, 210, 255, 0.05);
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin: 5px;
+        }
+
+        .diagram-arrow {
+            color: #00d2ff;
+            font-size: 1.2rem;
+            margin: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: rgba(0, 210, 255, 0.08);
+            color: #00d2ff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        @media (max-width: 768px) {
+            .paper-container { padding: 20px; }
+            h1.paper-title { font-size: 1.7rem; }
+            table, th, td { display: block; width: 100%; }
+            nav a { margin: 0 10px; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">About</a>
+        <a href="research.html" class="active">Research</a>
+    </nav>
+
+    <article class="paper-container">
+        <header class="paper-header">
+            <h1 class="paper-title">Dinosaur Extinction and Chaos Theory</h1>
+            <div class="author">Tanvi Kulkarni</div>
+            <div class="references-meta">References: Wikipedia • GeeksforGeeks • NASA Science • Nature</div>
+        </header>
+
+        <section id="abstract">
+            <h2 class="section-heading">Abstract</h2>
+            <p>
+                This paper examines the Cretaceous-Paleogene (K-Pg) mass extinction event through the analytical framework of Chaos Theory. By evaluating the non-linear, deterministic parameters governing Earth's historical ecosystem, we explore how minute variations in initial impact conditions—such as projectile location, trajectory velocity, and pre-existing environmental stress—could propagate into radically divergent evolutionary paths. Through hypothetical modeling scenarios, we demonstrate that the total extinction of non-avian dinosaurs was heavily dependent on a "worst-case scenario" threshold alignment, highlighting the sensitive dependence of macro-evolutionary outcomes on minor initial variables.
+            </p>
+        </section>
+
+        <section id="introduction">
+            <h2 class="section-heading">Introduction</h2>
+            <p>
+                The Dinosaur era or the Mesozoic era spanned approximately 252 million years ago to 66 million years ago. The Mesozoic era is divided into three parts: the Triassic, the Jurassic, and the Cretaceous. The Cretaceous-Paleogene extinction (the end Cretaceous extinction) event caused 75% or more of the species on earth to go extinct.
+            </p>
+            <p>
+                The cause of this mass extinction is famously believed to be an asteroid crash. The Chicxulub crater is believed to be the impact site of this asteroid. The effects include massive earthquakes, megatsunamis, and global debris spread. These effects led to the extinction of all non-avian dinosaurs, pterosaurs, mosasaurs and other marine reptiles, and many insects. Only the avian dinosaurs survived, who later evolved into modern birds. Small mammals and other placental mammals; reptiles like turtles, crocodiles, lizards; and amphibians like frogs and salamanders survived.
+            </p>
+            <p>
+                Chaos theory is a branch of mathematics and science that studies complex, non-linear systems which are highly sensitive to initial conditions. This concept, often referred to as the “butterfly effect,” suggests that small changes in starting conditions can lead to significantly different outcomes over time. In the context of the K-Pg extinction event, this perspective raises the possibility that minor variations in environmental or impact-related factors could have led to entirely different extinction scenarios. This paper explores multiple hypothetical situations to evaluate how such variations might have influenced the fate of the dinosaurs.
+            </p>
+        </section>
+
+        <section id="background">
+            <h2 class="section-heading">Background</h2>
+            <p>
+                The K-Pg happened about 66 million years ago. In rock layers around the world, there’s a thin layer of clay marking this moment in time (the “K–Pg boundary”). In 1980, Luis Alvarez and Walter Alvarez along with their team found high iridium levels at the K-Pg boundary. Iridium is a very rare metal on earth, but it is quite common in asteroids and meteorites, suggesting a space impact. Additional evidence includes shocked quartz (formed under high pressure), tiny molten rock droplets (spherules), and tsunami deposits.
+            </p>
+            
+            <blockquote class="definition">
+                <strong>Dynamical System:</strong> A dynamical system is a system whose state evolves over time according to a fixed rule.
+            </blockquote>
+
+            <p>
+                A large asteroid crashed into earth at the tip of the Yucatan platform. The asteroid crater was roughly 180 km wide, the asteroid size was approximately 10-15 km, and impact speed more than 25 km/second. The asteroid impacted into a shallow ocean and created a deep impression on the earth’s crust. Over a short period of time, several hundred billion tons of carbon dioxide and sulphur dioxide were released into the Earth’s atmosphere. The sulphur led to acid rain, so the oceans became acidic. As a result, the marine life started dying.
+            </p>
+            <p>
+                Also, the climate became unstable and sunlight was blocked by the dust in the atmosphere. The darkness lasted for months to years. As the sunlight was blocked, the temperatures dropped sharply. This adversely affected photosynthesis. Plants started to die, causing the food chains to collapse. With no food, the herbivores started to die too and the carnivores followed.
+            </p>
+            <p>
+                The crash is almost certainly the main reason for the mass extinction. It was confirmed as the main cause of the extinction by scientific consensus (2010 study). But the volcanic eruptions in the deccan traps during that period could have influenced the extinction too. It is believed that the volcanism weakened the ecosystem before the asteroid crash. While these factors explain the extinction, they do not fully address how small variations in these conditions could have altered the outcome.
+            </p>
+
+            <div class="diagram-container">
+                <div class="diagram-title">Diagram: K-Pg Asteroid Chaos Loop</div>
+                <div class="diagram-box">Asteroid Impact Site (Yucatan)</div>
+                <div class="diagram-arrow">↓</div>
+                <div class="diagram-box">Vaporized Gypsum &amp; Sulphur</div>
+                <div class="diagram-arrow">↓</div>
+                <div class="diagram-box">Blocked Sunlight &amp; Acid Rain</div>
+                <div class="diagram-arrow">↓</div>
+                <div class="diagram-box">Photosynthesis Halts</div>
+                <div class="diagram-arrow">↓</div>
+                <div class="diagram-box">Food Chain Collapse</div>
+            </div>
+        </section>
+
+        <section id="chaos-theory">
+            <h2 class="section-heading">Chaos Theory</h2>
+            <p>
+                Chaos theory helps us understand how small changes can lead to very big differences over time. The Chaos theory states that all complex chaotic systems show underlying patterns, interconnections, fractals and self-organization; even though they appear to be random.
+            </p>
+            
+            <blockquote class="definition">
+                <strong>Deterministic Laws:</strong> Rules in which the future state of a system is completely determined by its initial conditions, with no randomness involved.
+            </blockquote>
+            <blockquote class="definition">
+                <strong>Nonlinear System:</strong> A nonlinear system is one in which the output is not directly proportional to the input, often leading to complex and unpredictable behavior.
+            </blockquote>
+
+            <p>
+                Chaos theory mainly deals with dynamical systems, which are systems that continuously change, such as weather patterns, ecosystems, or even population growth. These systems usually follow deterministic laws, meaning they are governed by fixed rules and are not random in nature. However, many of these systems are also nonlinear, which means their outputs are not directly proportional to their inputs, making their behaviour more complex and harder to predict.
+            </p>
+            <p>
+                Because of this nonlinearity, even a very small difference in the initial conditions of a system can grow rapidly and result in completely different outcomes. This concept is known as the butterfly effect, a term introduced by Edward Lorenz. It suggests that a minor event, like the flapping of a butterfly’s wings, could eventually influence large-scale events such as storms. This does not mean the system is random, but rather that it is extremely sensitive to initial conditions. As time progresses, these small uncertainties get amplified, making long-term prediction almost impossible. Therefore, chaos theory shows that even systems that follow clear and deterministic rules can behave in ways that appear random and unpredictable in the real world.
+            </p>
+        </section>
+
+        <section id="application">
+            <h2 class="section-heading">Application</h2>
+            
+            <h3 class="sub-section-heading">Scenario: What if the Asteroid hit a deep ocean instead of shallow seas?</h3>
+            <p>
+                The Chicxulub impact occurred in the shallow carbonate platforms of the Yucatan Peninsula, which was a "worst-case scenario" for life on Earth. If the same 10-kilometer rock plunged into the deep ocean such as the central Pacific or Atlantic, the outcome would have been very different.
+            </p>
+            <ol>
+                <li>
+                    <strong>Atmosphere: Sulphates vs. Water Vapor</strong><br>
+                    The primary reason the original impact was so deadly was the target rock. The Yucatan was rich in gypsum (calcium sulphate). Vaporizing that rock injected tons of sulphur aerosols into the stratosphere, blocking sunlight and causing a nuclear winter.<br><br>
+                    <em>Deep Ocean Impact:</em> The asteroid would hit basaltic crust covered by miles of water. Instead of sulphur, it would vaporize massive volumes of seawater. High-altitude water vapor acts as a greenhouse gas. Rather than a global freeze, the Earth might have experienced a hyper-thermal event: rapid, intense global warming.
+                </li>
+                <li>
+                    <strong>The Mega-Tsunami</strong><br>
+                    In the shallow Yucatan, the energy was partitioned heavily into the crust. In the deep ocean, a much larger percentage of kinetic energy is transferred directly into the water column.
+                    <ul>
+                        <li><strong>Initial Wave:</strong> A massive wave several kilometers high would form immediately.</li>
+                        <li><strong>Propagation:</strong> A deep-ocean tsunami travels with efficiency, scraping soil and coastlines completely clean far inland.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Chaos Theory Connection</strong><br>
+                    Tiny shifts in impact coordinates translate to entirely opposing planetary timelines (Sulphur Ice Age vs. Hyper Greenhouse Effect).
+                </li>
+            </ol>
+
+            <h3 class="sub-section-heading">Comparison of Impact Scenarios</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Shallow Sea (Actual)</th>
+                        <th>Deep Ocean (Hypothetical)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Primary Aerosol</td>
+                        <td>Sulphur Dioxide</td>
+                        <td>Water Vapor</td>
+                    </tr>
+                    <tr>
+                        <td>Immediate Climate</td>
+                        <td>Global Cooling (Years)</td>
+                        <td>Global Warming (Decades)</td>
+                    </tr>
+                    <tr>
+                        <td>Tsunami Power</td>
+                        <td>High, but localized</td>
+                        <td>Extreme, global reach</td>
+                    </tr>
+                    <tr>
+                        <td>Survival Odds</td>
+                        <td>Favoured small, burrowing animals</td>
+                        <td>Favoured heat-tolerant species</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="sub-section-heading">Scenario: What if the Deccan Trap eruptions didn’t happen?</h3>
+            <p>
+                The Deccan Traps were massive volcanic eruptions in present-day India that happened around the same time as the K-Pg extinction event. If these eruptions had not occurred, ecosystems would have been far healthier and less stressed prior to the asteroid crash. The atmosphere would recover faster after the asteroid impact, potentially lowering overall extinction rates from 75% down to 50%.
+            </p>
+
+            <h3 class="sub-section-heading">Scenario: What if the Asteroid was smaller or slower?</h3>
+            <p>
+                To understand how size and speed affect the impact, we use the kinetic energy equation:
+            </p>
+            <div style="text-align: center; font-size: 1.2rem; margin: 15px 0; color: #00d2ff;">
+                $$K.E. = \frac{1}{2}mv^2$$
+            </div>
+            <p>
+                Because velocity ($$v$$) is squared, dropping the asteroid's velocity cuts down total destructive impact energy exponentially. This reveals a critical threshold effect: below a certain kinetic cutoff, the planetary environment successfully processes the shock and preserves its baseline food web structures.
+            </p>
+        </section>
+
+        <section id="analysis">
+            <h2 class="section-heading">Analysis &amp; Ranking</h2>
+            <ul>
+                <li><strong>1. Impact Location (Highest Sensitivity):</strong> Changing where the impact landed changes the core geology vaporized, showing structural sensitivity.</li>
+                <li><strong>2. Velocity (Highest Physical Scale):</strong> Governs the total energy via quadratic scaling ($$v^2$$).</li>
+                <li><strong>3. Deccan Traps (Baseline Conditions):</strong> Acted as pre-existing environmental stressors.</li>
+            </ul>
+        </section>
+
+        <section id="conclusion">
+            <h2 class="section-heading">Conclusion</h2>
+            <p>
+                Applying Chaos Theory to the K-Pg event proves that macro-evolutionary histories rely entirely on minor deterministic variables. Had any single factor tipped below the systemic critical threshold, non-avian dinosaurs could have continued their dominance across Earth.
+            </p>
+        </section>
+    </article>
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
