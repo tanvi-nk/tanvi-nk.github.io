@@ -22,37 +22,38 @@
             padding: 40px 20px;
         }
 
-        /* Top Navigation Menu Bar */
-       nav {
-    margin-bottom: 40px; /* Adjusted from 60px for consistent spacing across all pages */
-    text-align: center;
-    width: 100%;
-    z-index: 20;
-}
+        /* --- Your Exact Nav Menu Bar Style --- */
+        nav {
+            margin-bottom: 40px;
+            text-align: center;
+            width: 100%;
+            z-index: 20;
+        }
 
-nav a {
-    color: #b0b3b8;
-    text-decoration: none;
-    font-size: 0.95rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 0 20px;
-    padding-bottom: 6px;
-    transition: all 0.3s ease;
-    display: inline-block;
-    font-weight: 500;
-}
+        nav a {
+            color: #b0b3b8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0 20px;
+            padding-bottom: 6px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-weight: 500;
+        }
 
-nav a.active {
-    color: #00d2ff;
-    border-bottom: 2px solid #00d2ff;
-    text-shadow: 0 0 8px rgba(0, 210, 255, 0.6);
-}
+        nav a.active {
+            color: #00d2ff;
+            border-bottom: 2px solid #00d2ff;
+            text-shadow: 0 0 8px rgba(0, 210, 255, 0.6);
+        }
 
-nav a:hover {
-    color: #ffffff;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-}
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
         /* Research Paper Wrapper */
         .paper-container {
             max-width: 850px;
@@ -148,18 +149,6 @@ nav a:hover {
             margin-bottom: 8px;
         }
 
-        .chain-list {
-            list-style-type: none;
-            margin-left: 10px;
-        }
-
-        .chain-list li::before {
-            content: "→ ";
-            color: #00d2ff;
-            font-weight: bold;
-            margin-right: 5px;
-        }
-
         .diagram-container {
             background: #0d0e12;
             border: 1px dashed rgba(0, 210, 255, 0.3);
@@ -229,8 +218,10 @@ nav a:hover {
 </head>
 <body>
 
+    <!-- Heading Bar Menu with Research set as active -->
     <nav>
         <a href="index.html">About</a>
+        <a href="photography.html">Photography</a>
         <a href="research.html" class="active">Research</a>
     </nav>
 
@@ -410,6 +401,7 @@ nav a:hover {
         </section>
     </article>
 
+    <!-- Script to load LaTeX styling accurately -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>
