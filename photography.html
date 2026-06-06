@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography - Tanvi Kulkarni</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        /* Top Navigation Menu Bar */
+        nav {
+            margin-bottom: 50px;
+            text-align: center;
+            width: 100%;
+        }
+
+        nav a {
+            color: #b0b3b8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0 20px;
+            padding-bottom: 6px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        nav a.active {
+            color: #00d2ff;
+            border-bottom: 2px solid #00d2ff;
+            text-shadow: 0 0 8px rgba(0, 210, 255, 0.6);
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Header Layout */
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #ffffff 60%, #00d2ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.intro {
+            font-size: 1.05rem;
+            color: #8a8d93;
+            line-height: 1.6;
+        }
+
+        /* Responsive Photography Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1000px;
+            margin-bottom: 60px;
+        }
+
+        /* Image Cards */
+        .photo-card {
+            background: rgba(10, 10, 12, 0.8);
+            border: 1px solid rgba(0, 210, 255, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 210, 255, 0.4);
+        }
+
+        .image-wrapper {
+            width: 100%;
+            height: 250px;
+            background-color: #111; /* Fallback frame while loading */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Prevents stretching */
+            transition: transform 0.5s ease;
+        }
+
+        .photo-card:hover .image-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .photo-caption {
+            padding: 15px 20px;
+        }
+
+        .photo-caption h3 {
+            font-size: 1.05rem;
+            color: #ffffff;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .photo-caption p {
+            font-size: 0.85rem;
+            color: #00d2ff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; }
+            nav a { margin: 0 10px; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Heading Bar Menu -->
+    <nav>
+        <a href="index.html">About</a>
+        <a href="photography.html" class="active">Photography</a>
+        <a href="research.html">Research</a>
+    </nav>
+
+    <header class="page-header">
+        <h1>Visual Gallery</h1>
+        <p class="intro">Capturing light, cinematic geometry, and stories through the lens.</p>
+    </header>
+
+    <main class="gallery-grid">
+        <!-- Photo 1 -->
+        <div class="photo-card">
+            <div class="image-wrapper">
+                <!-- Replace 'photo1.jpg' with your real image link later! -->
+                <img src="photo1.jpg" alt="Cinematic Shot">
+            </div>
+            <div class="photo-caption">
+                <h3>Frame One</h3>
+                <p>Cinematic Perspective</p>
+            </div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="photo-card">
+            <div class="image-wrapper">
+                <img src="photo2.jpg" alt="Visual Composition">
+            </div>
+            <div class="photo-caption">
+                <h3>Frame Two</h3>
+                <p>Light &amp; Shadow</p>
+            </div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="photo-card">
+            <div class="image-wrapper">
+                <img src="photo3.jpg" alt="Creative Project">
+            </div>
+            <div class="photo-caption">
+                <h3>Frame Three</h3>
+                <p>Story Elements</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
