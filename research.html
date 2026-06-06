@@ -19,37 +19,14 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: relative;
             padding: 40px 20px;
-            overflow-x: hidden;
         }
 
-        /* Electric Blue Edge Accents */
-        body::before, body::after {
-            content: "";
-            position: absolute;
-            background-color: #00d2ff;
-            box-shadow: 0 0 15px #00d2ff, 0 0 30px #00d2ff;
-            z-index: 10;
-        }
-
-        body::before { top: 0; left: 5%; width: 90%; height: 2px; }
-        body::after { bottom: 0; left: 5%; width: 90%; height: 2px; }
-
-        .edge-left-accent, .edge-right-accent {
-            position: fixed;
-            top: 20%;
-            width: 2px;
-            height: 60%;
-            z-index: 10;
-        }
-        .edge-left-accent { left: 0; background: linear-gradient(to bottom, transparent, #00d2ff, transparent); box-shadow: 0 0 10px #00d2ff; }
-        .edge-right-accent { right: 0; background: linear-gradient(to bottom, transparent, #00d2ff, transparent); box-shadow: 0 0 10px #00d2ff; }
-
-        /* Navigation Bar */
+        /* Top Navigation Menu Bar */
         nav {
             margin-bottom: 40px;
-            z-index: 20;
+            text-align: center;
+            width: 100%;
         }
 
         nav a {
@@ -58,9 +35,10 @@
             font-size: 0.95rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin: 0 15px;
+            margin: 0 20px;
             padding-bottom: 6px;
             transition: all 0.3s ease;
+            display: inline-block;
             font-weight: 500;
         }
 
@@ -75,16 +53,15 @@
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
         }
 
-        /* Research Document Container */
+        /* Research Paper Wrapper */
         .paper-container {
             max-width: 850px;
             width: 100%;
-            padding: 50px;
+            padding: 40px;
             border: 1px solid rgba(0, 210, 255, 0.15);
             background: rgba(10, 10, 12, 0.8);
             border-radius: 12px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(10px);
             margin-bottom: 60px;
         }
 
@@ -95,8 +72,8 @@
             margin-bottom: 35px;
         }
 
-        h1 {
-            font-size: 2.4rem;
+        h1.paper-title {
+            font-size: 2.2rem;
             font-weight: 800;
             line-height: 1.3;
             background: linear-gradient(135deg, #ffffff 70%, #00d2ff 100%);
@@ -119,9 +96,8 @@
             margin-top: 10px;
         }
 
-        /* Typography & Structure */
         h2.section-heading {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             color: #ffffff;
@@ -132,7 +108,7 @@
         }
 
         h3.sub-section-heading {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: #00d2ff;
             margin-top: 25px;
             margin-bottom: 12px;
@@ -147,7 +123,6 @@
             text-align: justify;
         }
 
-        /* Core Definitions styling */
         blockquote.definition {
             background: rgba(0, 210, 255, 0.03);
             border: 1px solid rgba(0, 210, 255, 0.15);
@@ -155,14 +130,12 @@
             border-radius: 6px;
             margin: 20px 0;
             font-size: 1rem;
-            line-height: 1.5;
         }
         
         blockquote.definition strong {
             color: #00d2ff;
         }
 
-        /* Lists formatting */
         ul, ol {
             margin-left: 25px;
             margin-bottom: 20px;
@@ -184,9 +157,9 @@
             content: "→ ";
             color: #00d2ff;
             font-weight: bold;
+            margin-right: 5px;
         }
 
-        /* Diagram Component Styling */
         .diagram-container {
             background: #0d0e12;
             border: 1px dashed rgba(0, 210, 255, 0.3);
@@ -207,402 +180,4 @@
 
         .diagram-box {
             display: inline-block;
-            border: 1px solid #00d2ff;
-            padding: 10px 15px;
-            background: rgba(0, 210, 255, 0.05);
-            border-radius: 4px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin: 5px;
-            box-shadow: 0 0 10px rgba(0, 210, 255, 0.1);
-        }
-
-        .diagram-arrow {
-            color: #00d2ff;
-            font-size: 1.2rem;
-            margin: 5px;
-        }
-
-        /* Data Tables Styling */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-            font-size: 0.95rem;
-            background: rgba(255, 255, 255, 0.01);
-        }
-
-        th, td {
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 12px 15px;
-            text-align: left;
-        }
-
-        th {
-            background-color: rgba(0, 210, 255, 0.08);
-            color: #00d2ff;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-
-        tr:nth-child(even) {
-            background-color: rgba(255, 255, 255, 0.02);
-        }
-
-        tr:hover {
-            background-color: rgba(0, 210, 255, 0.03);
-        }
-
-        /* Responsive Breakpoints */
-        @media (max-width: 768px) {
-            .paper-container { padding: 25px; }
-            h1 { font-size: 1.8rem; }
-            table, th, td { display: block; width: 100%; }
-            th { text-align: right; }
-            th::before { content: "Header: "; float: left; }
-            nav a { margin: 0 8px; font-size: 0.85rem; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="edge-left-accent"></div>
-    <div class="edge-right-accent"></div>
-
-    <nav>
-        <a href="index.html">About</a>
-        <a href="research.html" class="active">Research</a>
-    </nav>
-
-    <article class="paper-container">
-        <header class="paper-header">
-            <h1>Dinosaur Extinction and Chaos Theory</h1>
-            <div class="author">Tanvi Kulkarni</div>
-            <div class="references-meta">References: Wikipedia • GeeksforGeeks • NASA Science • Nature</div>
-        </header>
-
-        <section id="abstract">
-            <h2 class="section-heading">Abstract</h2>
-            <p>
-                This paper examines the Cretaceous-Paleogene (K-Pg) mass extinction event through the analytical framework of Chaos Theory. By evaluating the non-linear, deterministic parameters governing Earth's historical ecosystem, we explore how minute variations in initial impact conditions—such as projectile location, trajectory velocity, and pre-existing environmental stress—could propagate into radically divergent evolutionary paths. Through hypothetical modeling scenarios, we demonstrate that the total extinction of non-avian dinosaurs was heavily dependent on a "worst-case scenario" threshold alignment, highlighting the sensitive dependence of macro-evolutionary outcomes on minor initial variables.
-            </p>
-        </section>
-
-        <section id="introduction">
-            <h2 class="section-heading">Introduction</h2>
-            <p>
-                The Dinosaur era or the Mesozoic era spanned approximately 252 million years ago to 66 million years ago[cite: 1]. The Mesozoic era is divided into three parts: the Triassic, the Jurassic, and the Cretaceous[cite: 1]. The Cretaceous-Paleogene extinction (the end Cretaceous extinction) event caused 75% or more of the species on earth to go extinct[cite: 1].
-            </p>
-            <p>
-                The cause of this mass extinction is famously believed to be an asteroid crash[cite: 1]. The Chicxulub crater is believed to be the impact site of this asteroid[cite: 1]. The effects include massive earthquakes, megatsunamis, and global debris spread[cite: 1]. These effects led to the extinction of all non-avian dinosaurs, pterosaurs, mosasaurs and other marine reptiles, and many insects[cite: 1]. Only the avian dinosaurs survived, who later evolved into modern birds[cite: 1]. Small mammals and other placental mammals; reptiles like turtles, crocodiles, lizards; and amphibians like frogs and salamanders survived[cite: 1].
-            </p>
-            <p>
-                Chaos theory is a branch of mathematics and science that studies complex, non-linear systems which are highly sensitive to initial conditions[cite: 1]. This concept, often referred to as the “butterfly effect,” suggests that small changes in starting conditions can lead to significantly different outcomes over time[cite: 1]. In the context of the K-Pg extinction event, this perspective raises the possibility that minor variations in environmental or impact-related factors could have led to entirely different extinction scenarios[cite: 1]. This paper explores multiple hypothetical situations to evaluate how such variations might have influenced the fate of the dinosaurs[cite: 1].
-            </p>
-        </section>
-
-        <section id="background">
-            <h2 class="section-heading">Background</h2>
-            <p>
-                The K-Pg happened about 66 million years ago[cite: 1]. In rock layers around the world, there’s a thin layer of clay marking this moment in time (the “K–Pg boundary”)[cite: 1]. In 1980, Luis Alvarez and Walter Alvarez along with their team found high iridium levels at the K-Pg boundary[cite: 1]. Iridium is a very rare metal on earth, but it is quite common in asteroids and meteorites, suggesting a space impact[cite: 1]. Additional evidence includes shocked quartz (formed under high pressure), tiny molten rock droplets (spherules), and tsunami deposits[cite: 1].
-            </p>
-            
-            <blockquote class="definition">
-                <strong>Dynamical System:</strong> A dynamical system is a system whose state evolves over time according to a fixed rule[cite: 1].
-            </blockquote>
-
-            <p>
-                A large asteroid crashed into earth at the tip of the Yucatan platform[cite: 1]. The asteroid crater was roughly 180 km wide, the asteroid size was approximately 10-15 km, and impact speed more than 25 km/second[cite: 1]. The asteroid impacted into a shallow ocean and created a deep impression on the earth’s crust[cite: 1]. Over a short period of time, several hundred billion tons of carbon dioxide and sulphur dioxide were released into the Earth’s atmosphere[cite: 1]. The sulphur led to acid rain, so the oceans became acidic[cite: 1]. As a result, the marine life started dying[cite: 1].
-            </p>
-            <p>
-                Also, the climate became unstable and sunlight was blocked by the dust in the atmosphere[cite: 1]. The darkness lasted for months to years[cite: 1]. As the sunlight was blocked, the temperatures dropped sharply[cite: 1]. This adversely affected photosynthesis[cite: 1]. Plants started to die, causing the food chains to collapse[cite: 1]. With no food, the herbivores started to die too and the carnivores followed[cite: 1].
-            </p>
-            <p>
-                The crash is almost certainly the main reason for the mass extinction[cite: 1]. It was confirmed as the main cause of the extinction by scientific consensus (2010 study)[cite: 1]. But the volcanic eruptions in the deccan traps during that period could have influenced the extinction too[cite: 1]. It is believed that the volcanism weakened the ecosystem before the asteroid crash[cite: 1]. While these factors explain the extinction, they do not fully address how small variations in these conditions could have altered the outcome[cite: 1].
-            </p>
-
-            <div class="diagram-container">
-                <div class="diagram-title">Diagram: K-Pg Asteroid Chaos Loop[cite: 1]</div>
-                <div class="diagram-box">Asteroid Impact Site (Yucatan)[cite: 1]</div>
-                <div class="diagram-arrow">↓</div>
-                <div class="diagram-box">Vaporized Gypsum &amp; Sulphur[cite: 1]</div>
-                <div class="diagram-arrow">↓</div>
-                <div class="diagram-box">Blocked Sunlight &amp; Acid Rain[cite: 1]</div>
-                <div class="diagram-arrow">↓</div>
-                <div class="diagram-box">Photosynthesis Halts[cite: 1]</div>
-                <div class="diagram-arrow">↓</div>
-                <div class="diagram-box">Food Chain Collapse (Mass Extinction)[cite: 1]</div>
-            </div>
-        </section>
-
-        <section id="chaos-theory">
-            <h2 class="section-heading">Chaos Theory</h2>
-            <p>
-                Chaos theory helps us understand how small changes can lead to very big differences over time[cite: 1]. The Chaos theory states that all complex chaotic systems show underlying patterns, interconnections, fractals and self-organization; even though they appear to be random[cite: 1]. 
-            </p>
-            
-            <blockquote class="definition">
-                <strong>Deterministic Laws:</strong> Rules in which the future state of a system is completely determined by its initial conditions, with no randomness involved[cite: 1].
-            </blockquote>
-            <blockquote class="definition">
-                <strong>Nonlinear System:</strong> A nonlinear system is one in which the output is not directly proportional to the input, often leading to complex and unpredictable behavior[cite: 1].
-            </blockquote>
-
-            <p>
-                Chaos theory mainly deals with dynamical systems, which are systems that continuously change, such as weather patterns, ecosystems, or even population growth[cite: 1]. These systems usually follow deterministic laws, meaning they are governed by fixed rules and are not random in nature[cite: 1]. However, many of these systems are also nonlinear, which means their outputs are not directly proportional to their inputs, making their behaviour more complex and harder to predict[cite: 1]. 
-            </p>
-            <p>
-                Because of this nonlinearity, even a very small difference in the initial conditions of a system can grow rapidly and result in completely different outcomes[cite: 1]. This concept is known as the butterfly effect, a term introduced by Edward Lorenz[cite: 1]. It suggests that a minor event, like the flapping of a butterfly’s wings, could eventually influence large-scale events such as storms[cite: 1]. This does not mean the system is random, but rather that it is extremely sensitive to initial conditions[cite: 1]. As time progresses, these small uncertainties get amplified, making long-term prediction almost impossible[cite: 1]. Therefore, chaos theory shows that even systems that follow clear and deterministic rules can behave in ways that appear random and unpredictable in the real world[cite: 1].
-            </p>
-        </section>
-
-        <section id="application">
-            <h2 class="section-heading">Application</h2>
-            
-            <h3 class="sub-section-heading">Scenario: What if the Asteroid hit a deep ocean instead of shallow seas?</h3>
-            <p>
-                The Chicxulub impact occurred in the shallow carbonate platforms of the Yucatan Peninsula, which was a "worst-case scenario" for life on Earth[cite: 1]. If the same 10-kilometer rock plunged into the deep ocean such as the central Pacific or Atlantic, the outcome would have been very different, though we can’t say it would have been better[cite: 1].
-            </p>
-            <ol>
-                <li>
-                    <strong>Atmosphere: Sulphates vs. Water Vapor</strong><br>
-                    The primary reason the original impact was so deadly was the target rock[cite: 1]. The Yucatan was rich in gypsum (calcium sulphate)[cite: 1]. Vaporizing that rock injected tons of sulphur aerosols (fine particles suspended in the atmosphere due to volcanic activity, etc.) into the stratosphere, blocking sunlight and causing a nuclear winter[cite: 1].<br><br>
-                    <em>Deep Ocean Impact:</em> The asteroid would hit basaltic crust covered by miles of water[cite: 1]. Instead of sulphur, it would vaporize massive volumes of seawater[cite: 1]. High-altitude water vapor acts as a greenhouse gas[cite: 1]. Rather than a global freeze, the Earth might have experienced a hyper-thermal event: rapid, intense global warming that could last for years, potentially boiling away certain ecosystems rather than freezing them[cite: 1].
-                </li>
-                <li>
-                    <strong>The Mega-Tsunami</strong><br>
-                    In the shallow Yucatan, the energy was partitioned heavily into the crust[cite: 1]. In the deep ocean (approx. 4–5 km deep), a much larger percentage of kinetic energy is transferred directly into the water column[cite: 1].
-                    <ul style="margin-top: 10px;">
-                        <li><strong>Initial Wave:</strong> A massive wave several kilometers high would form immediately[cite: 1].</li>
-                        <li><strong>Propagation:</strong> Unlike shallow-water waves that lose energy to friction against the seafloor, a deep-ocean tsunami travels with efficiency[cite: 1]. It would have hit every coastline on Earth with heights of hundreds of meters, making the continents clean of vegetation and soil far inland[cite: 1].</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Chaos Theory: The "Sensitive Dependence"</strong><br>
-                    Chaos Theory, specifically the butterfly effect, suggests that tiny variations in the starting state of a system can lead to vastly different outcomes[cite: 1]. Link to Chaos Theory in this scenario:
-                    <ul style="margin-top: 10px; list-style-type: square;">
-                        <li><strong>Path A (Shallow):</strong> High sulphur, Global Cooling, Extinction of Dinosaurs, Rise of Mammals[cite: 1].</li>
-                        <li><strong>Path B (Deep):</strong> High Water Vapor, Global Warming, Potential survival of non-avian dinosaurs in specific regions[cite: 1].</li>
-                    </ul>
-                </li>
-            </ol>
-
-            <p><strong>Chain Reaction:</strong> A deep ocean impact could also create a chain reaction[cite: 1]:</p>
-            <ul class="chain-list">
-                <li>Water vapor enters the atmosphere[cite: 1]</li>
-                <li>Heat gets trapped → temperature rises[cite: 1]</li>
-                <li>Warmer oceans release gases like carbon dioxide and methane[cite: 1]</li>
-                <li>This causes even more warming[cite: 1]</li>
-            </ul>
-            <p>
-                This scenario shows that even a small change, like where the asteroid landed, could have changed Earth’s future completely[cite: 1]. The extinction of dinosaurs during the K-Pg extinction event might not have happened in the same way, and some species may have survived[cite: 1]. It also suggests that the rise of mammals and eventually humans may have depended on this one specific event[cite: 1].
-            </p>
-
-            <h3 class="sub-section-heading">Comparison of Impact Scenarios</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Feature[cite: 1]</th>
-                        <th>Shallow Sea (Actual)[cite: 1]</th>
-                        <th>Deep Ocean (Hypothetical)[cite: 1]</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Primary Aerosol[cite: 1]</td>
-                        <td>Sulphur Dioxide[cite: 1]</td>
-                        <td>Water Vapor[cite: 1]</td>
-                    </tr>
-                    <tr>
-                        <td>Immediate Climate[cite: 1]</td>
-                        <td>Global Cooling (Years)[cite: 1]</td>
-                        <td>Global Warming (Decades)[cite: 1]</td>
-                    </tr>
-                    <tr>
-                        <td>Tsunami Power[cite: 1]</td>
-                        <td>High, but localized/dissipated[cite: 1]</td>
-                        <td>Extreme, global reach[cite: 1]</td>
-                    </tr>
-                    <tr>
-                        <td>Seafloor Disturbance[cite: 1]</td>
-                        <td>Massive cratering[cite: 1]</td>
-                        <td>Massive pressure pulse &amp; hydrothermal release[cite: 1]</td>
-                    </tr>
-                    <tr>
-                        <td>Survival Odds[cite: 1]</td>
-                        <td>Favoured small, burrowing animals[cite: 1]</td>
-                        <td>Favoured deep-sea life &amp; heat-tolerant species[cite: 1]</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3 class="sub-section-heading">Scenario: What if the Deccan Trap eruptions didn’t happen?</h3>
-            <p>
-                The Deccan Traps were massive volcanic eruptions in present-day India that happened around the same time as the K-Pg extinction event[cite: 1]. While the asteroid is usually seen as the main cause of extinction, these eruptions may have already weakened Earth’s ecosystems before the impact[cite: 1]. If these eruptions had not occurred, the outcome of the extinction event could have been very different[cite: 1].
-            </p>
-            <ol>
-                <li><strong>A More Stable Ecosystem:</strong> Before the asteroid impact, the Deccan Traps released large amounts of gases like carbon dioxide and sulphur dioxide[cite: 1]. This caused repeated periods of warming and cooling, which affected climate and caused stress on plants and oceans[cite: 1]. Without the eruptions, Earth’s climate would have been more stable and ecosystems would have been healthier and more balanced[cite: 1]. Plants, oceans, and animal life would not already be under stress, offering species a better survival chance[cite: 1].</li>
-                <li><strong>The “Double Impact” Effect:</strong> The asteroid and volcanic eruptions together are often seen as a combined disaster[cite: 1]. The asteroid may have even increased volcanic activity by sending shockwaves through Earth[cite: 1]. After the impact, volcanoes continued releasing gases into the atmosphere[cite: 1]. Without the Deccan Traps, the atmosphere would recover faster after the asteroid impact[cite: 1]. Instead of a long period of environmental damage, Earth might have faced a shorter, less severe crisis[cite: 1].</li>
-                <li><strong>Effects on Evolution:</strong> The extinction event allowed mammals to grow and spread because dinosaurs were no longer dominant[cite: 1]. If more dinosaurs survived, mammals might have remained small and less important for a much longer time[cite: 1]. Furthermore, the volcanic eruptions also harmed marine ecosystems by making oceans more acidic[cite: 1]. Without this, ocean species like ammonites and coral reefs might have had a better chance of surviving[cite: 1].</li>
-                <li><strong>Final Outcome:</strong> This scenario shows that the extinction of dinosaurs was not caused by a single event alone[cite: 1]. From a Chaos Theory perspective, removing one factor (the volcanoes) could have significantly changed the final outcome[cite: 1].</li>
-            </ol>
-
-            <h3 class="sub-section-heading">Comparison of Real vs. Alternate Timeline</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Feature[cite: 1]</th>
-                        <th>Actual History (Traps + Asteroid)[cite: 1]</th>
-                        <th>Alternate History (Asteroid Only)[cite: 1]</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Global Temperature[cite: 1]</td>
-                        <td>Erratic "pulses" of heat and cold[cite: 1]</td>
-                        <td>Stable, warm greenhouse climate[cite: 1]</td>
-                    </tr>
-                    <tr>
-                        <td>Ocean Acidity[cite: 1]</td>
-                        <td>High[cite: 1]</td>
-                        <td>Low to Moderate[cite: 1]</td>
-                    </tr>
-                    <tr>
-                        <td>Extinction Rate[cite: 1]</td>
-                        <td>Approx 75% of all species[cite: 1]</td>
-                        <td>Potentially lower (50-60%)[cite: 1]</td>
-                    </tr>
-                    <tr>
-                        <td>Recovery Time[cite: 1]</td>
-                        <td>Millions of years[cite: 1]</td>
-                        <td>Hundreds of thousands of years[cite: 1]</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3 class="sub-section-heading">Scenario: What if the Asteroid was smaller or slower?</h3>
-            <p>
-                To understand how size and speed affect the impact, we can use the concept of kinetic energy[cite: 1]:
-            </p>
-            <div style="text-align: center; font-size: 1.2rem; margin: 15px 0; color: #00d2ff;">
-                $$K.E. = \frac{1}{2}mv^2$$
-            </div>
-            <p>
-                Here, <em>m</em> = mass (size) and <em>v</em> = velocity (speed)[cite: 1]. As velocity is squared, even a small change in speed can greatly change the energy released[cite: 1].
-            </p>
-            <ol>
-                <li><strong>Smaller Asteroid (Reduced Mass):</strong> If the asteroid was smaller (for example, 5 km instead of 10 km), its mass would be much lower[cite: 1]. Less rock and sulphur would be thrown into the air, meaning the “impact winter” would be shorter and less intense[cite: 1]. Plants could still survive partially, allowing elements of the food chain to avoid complete collapse[cite: 1].</li>
-                <li><strong>Slower Asteroid (Reduced Velocity):</strong> Speed has an even bigger effect than size[cite: 1]. If the asteroid moved slower, total kinetic energy drops exponentially[cite: 1]. The crater would be smaller, shockwaves weaker, and the devastating global heat wave from falling debris would be drastically reduced—preventing worldwide forest fires[cite: 1].</li>
-                <li><strong>Chaos Theory: The “Threshold Effect”:</strong> Earth’s ecosystem can be seen as a balanced dynamic system with a critical threshold[cite: 1]. Above the threshold (real event), the massive energy injection forces ecosystem collapse[cite: 1]. Below the threshold, substantial localized damage occurs, but the overall macro-system absorbs the shock and recovers[cite: 1].</li>
-            </ol>
-
-            <h3 class="sub-section-heading">Comparison of Impact Variables</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Feature[cite: 1]</th>
-                        <th>Smaller Impactor[cite: 1]</th>
-                        <th>Slower Impactor[cite: 1]</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Crater Size[cite: 1]</td>
-                        <td>Moderately smaller[cite: 1]</td>
-                        <td>Dramatically smaller[cite: 1]</td>
-                    </tr>
-                    <tr>
-                        <td>Seismic Shock[cite: 1]</td>
-                        <td>Reduced[cite: 1]</td>
-                        <td>Significantly reduced[cite: 1]</td>
-                    </tr>
-                    <tr>
-                        <td>Atmospheric Dust[cite: 1]</td>
-                        <td>Less, shorter duration[cite: 1]</td>
-                        <td>Much less, localized[cite: 1]</td>
-                    </tr>
-                    <tr>
-                        <td>Global Extinction[cite: 1]</td>
-                        <td>Likely limited (high survival)[cite: 1]</td>
-                        <td>Likely low (mass survival)[cite: 1]</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3 class="sub-section-heading">Scenario: What if the impact happened in a different location?</h3>
-            <p>
-                The impact site was arguably the most critical factor in the severity of the K-Pg extinction[cite: 1]. Scientists often say that the Yucatan Peninsula was the worst possible place for the asteroid to land[cite: 1]. If the asteroid had hit just 30 minutes earlier or later, it would have landed in the deep Atlantic or Pacific oceans due to the Earth's rotation[cite: 1].
-            </p>
-            <ol>
-                <li><strong>“Safer” Locations (Stable Land Areas):</strong> If the asteroid hit a stable land region made of hard rocks (like granite), the effects would be less extreme[cite: 1]. These areas do not contain high levels of embedded sulphur[cite: 1]. Consequently, the impact winter would be shorter, and many dinosaurs outside the direct blast zone could survive[cite: 1].</li>
-                <li><strong>“Worst-Case” Locations (Oil- and Gas-Rich Areas):</strong> The Yucatán region was dangerous because it contained thick beds of sulphur and hydrocarbons[cite: 1]. If it had struck an even richer target basin, massive toxic soot clouds would block out sunlight entirely, plunging Earth into absolute darkness[cite: 1].</li>
-                <li><strong>Polar Regions (Arctic or Antarctic):</strong> Hitting near the poles would melt vast ice sheets causing flash sea-level rises, while launching pure water vapor up to trap massive planetary greenhouse warmth[cite: 1]. Polar species already adapted to prolonged seasonal dark shifts would have held a strong survival advantage[cite: 1].</li>
-            </ol>
-
-            <h3 class="sub-section-heading">Comparison of Impact Sites</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Impact Site[cite: 1]</th>
-                        <th>Primary Material Vaporized[cite: 1]</th>
-                        <th>Climate Outcome[cite: 1]</th>
-                        <th>Extinction Severity[cite: 1]</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Yucatan (Actual)[cite: 1]</td>
-                        <td>Sulphur &amp; Limestone[cite: 1]</td>
-                        <td>Deep Nuclear Winter[cite: 1]</td>
-                        <td>High (75%)[cite: 1]</td>
-                    </tr>
-                    <tr>
-                        <td>Deep Ocean[cite: 1]</td>
-                        <td>Seawater (Water Vapor)[cite: 1]</td>
-                        <td>Hyper-warming[cite: 1]</td>
-                        <td>Moderate[cite: 1]</td>
-                    </tr>
-                    <tr>
-                        <td>Granite Shield[cite: 1]</td>
-                        <td>Silicates (Dust)[cite: 1]</td>
-                        <td>Short, mild winter[cite: 1]</td>
-                        <td>Low[cite: 1]</td>
-                    </tr>
-                    <tr>
-                        <td>Oil Basin[cite: 1]</td>
-                        <td>Hydrocarbons (Soot)[cite: 1]</td>
-                        <td>Extreme, toxic darkness[cite: 1]</td>
-                        <td>Absolute[cite: 1]</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section id="analysis">
-            <h2 class="section-heading">Analysis</h2>
-            <p>
-                To understand which factor mattered the most, we evaluate two criteria: <strong>Scale</strong> (how big the impact energy was) and <strong>Sensitivity</strong> (how much it actually changed life on Earth)[cite: 1].
-            </p>
-            <ul>
-                <li><strong>1. Most Important Factor: Impact Location:</strong> The place the asteroid hit made things vastly worse[cite: 1]. The Yucatan's sulphur-rich composition amplified atmospheric damage[cite: 1]. A slight shift in rotation timing or entry coordinate would hit hard rock or open deep water, preventing the mass global collapse entirely[cite: 1]. This demonstrates explicit <em>sensitive dependence on initial conditions</em>[cite: 1].</li>
-                <li><strong>2. Second Most Important: Velocity (Speed):</strong> Because energy scales exponentially with velocity squared ($$v^2$$), speed governs total structural devastation[cite: 1]. A slower asteroid cuts down global heat generation, keeping baseline planetary food chains intact[cite: 1]. Velocity remains the absolute primary physical variable threshold[cite: 1].</li>
-                <li><strong>3. Third: The Deccan Traps (Pre-existing Conditions):</strong> The volcanic eruptions acted as the baseline initial condition[cite: 1]. A system already under extreme stress collapses far more easily under a secondary shock[cite: 1].</li>
-            </ul>
-        </section>
-
-        <section id="conclusion">
-            <h2 class="section-heading">Conclusion</h2>
-            <p>
-                This paper examined the K-Pg extinction event through the aspect of Chaos Theory[cite: 1]. By analysing different scenarios such as changes in impact location, velocity, and environmental conditions, it becomes clear that the outcome could have been completely different for each scenario[cite: 1].
-            </p>
-            <p>
-                The results show that small variations in initial conditions could have led to very different consequences which would affect climate, ecosystems, and decide which species would survive[cite: 1]. This supports the idea that Earth’s system at the time was very sensitive and capable of multiple possible outcomes[cite: 1]. Therefore, the extinction of dinosaurs was the result of specific factors acting together[cite: 1]. A small change in these conditions could have altered the course of evolution and allowed dinosaurs to continue dominating Earth, changing the future of living beings completely[cite: 1].
-            </p>
-        </section>
-    </article>
-
-    <!-- Script to load LaTeX styling accurately -->
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</body>
-</html>
+            border: 1px solid #0
